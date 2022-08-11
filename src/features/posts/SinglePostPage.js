@@ -1,12 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import ReactionPosts from './ReactionPosts'
+import { selectPostById } from './postSlice'
+import PostAuthor from './PostAuthor'
+
+
 
 export const SinglePostPage = ({ match }) => {
     const { postId } =  match.params
 
-    const post = useSelector(state => state.posts.find(post => post.id === postId))
-    console.log(post)
+    const post = useSelector(state => selectPostById(state, postId))
 
     if(!post) {
         return (
@@ -24,6 +28,7 @@ export const SinglePostPage = ({ match }) => {
                 Edit Post
             </Link>
         </article>
+        <ReactionPosts post={post}/>
     </section>
   )
 }
