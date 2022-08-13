@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { selectAllPosts, selectPostByUser } from '../posts/postSlice';
+import { selectPostByUser } from '../posts/postSlice';
 import { selectUserById } from './userSlice';
 import { Link } from 'react-router-dom';
 

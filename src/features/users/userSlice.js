@@ -1,5 +1,4 @@
 import { createSlice,createAsyncThunk, createEntityAdapter } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
 import { client } from "../../api/client";
 
 const usersAdapter = createEntityAdapter();
