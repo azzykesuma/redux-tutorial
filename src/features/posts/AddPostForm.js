@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { selectAllUsers, selectUserById } from '../users/userSlice'
 import { addNewPost } from './postSlice'
 
 export const AddPostForm = () => {
@@ -7,7 +8,9 @@ export const AddPostForm = () => {
   const [content, setContent] = useState('')
   const [userId, setUserId] = useState('')
   const [addRequestStatus, setAddRequestStatus] = useState('idle')
-  const users = useSelector((state) => state.users)
+  // changing the selector from state => state.users
+  // to custom selector made by getselector
+  const users = useSelector(selectAllUsers)
   const dispatch = useDispatch()
 
 
